@@ -63,7 +63,7 @@ def main():
     avg_code_length = calculate_avg_code_length(huffman_mapping, char_freq)
     print(f"Средняя длина элементарного кода для двухбуквенных сочетаний: {avg_code_length:.2f} бит")
 
-    encoded_text = "".join(huffman_mapping[chars] for chars in [text[i:i+2] for i in range(len(text)-1)])
+    encoded_text = "".join(huffman_mapping[chars] for chars in [text[i:i+2] for i in range(0,len(text)-1),2])
     print(f"Закодированный текст: {encoded_text}")
 
     efficiency = calculate_compression_efficiency(text, encoded_text)
